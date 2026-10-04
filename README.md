@@ -25,6 +25,7 @@ The main idea is that the shapes and the renderers are kept separate. This means
 | I3 | `AsciiRenderer` | `src/AsciiRenderer.java` |
 | Client | `Main` | `src/Main.java` |
 
+
 The bridge field is `Shape.renderer`.
 
 `Shape.execute()` is the main abstraction operation, and `setImplementation(Renderer renderer)` changes the renderer.
