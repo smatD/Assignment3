@@ -54,7 +54,15 @@ public final class Main {
                         + " | before=VECTOR circle radius=2"
                         + " | after=RASTER circle radius=2");
 
-        System.out.println("SUMMARY: " + passed + "/5 PASS");
+        Circle circleI3 = new Circle("A1", 2, new AsciiRenderer());
+        check("T6", "Circle + AsciiRenderer",
+                "ASCII circle radius=2", circleI3.execute());
+
+        Square squareI3 = new Square("A2", 3, new AsciiRenderer());
+        check("T7", "Square + AsciiRenderer",
+                "ASCII square side=3", squareI3.execute());
+
+        System.out.println("SUMMARY: " + passed + "/7 PASS");
     }
 
     private static void check(String id, String participants, String expected, String actual) {

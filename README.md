@@ -4,7 +4,7 @@
 **Group:** SE-2522  
 **Topic:** A - Shape rendering  
 **Repository:** https://github.com/smatD/Assignment3  
-**Base commit:** bab423fe00de6f19147ea73bfd7ce6a253915008
+**Base commit:** 417058ff0dda5163032b4ed1c10f14a3bd4addcc
 
 ## About the project
 
