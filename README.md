@@ -12,22 +12,24 @@ This project is an example of the Bridge design pattern using different shapes a
 
 The main idea is that the shapes and the renderers are kept separate. This means that a shape such as Circle or Square can use different renderers without needing a separate class for every possible combination.
 
-## Classes
+## Role map
 
-The main classes used in the project are:
+| Role | Class | Source |
+|---|---|---|
+| Abstraction | `Shape` | `src/Shape.java` |
+| A1 | `Circle` | `src/Circle.java` |
+| A2 | `Square` | `src/Square.java` |
+| Implementor | `Renderer` | `src/Renderer.java` |
+| I1 | `VectorRenderer` | `src/VectorRenderer.java` |
+| I2 | `RasterRenderer` | `src/RasterRenderer.java` |
+| I3 | `AsciiRenderer` | `src/AsciiRenderer.java` |
+| Client | `Main` | `src/Main.java` |
 
-- `Shape` - the main abstraction for the shapes.
-- `Circle` - a shape that stores a radius.
-- `Square` - a shape that stores a side length.
-- `Renderer` - the interface used by the different renderers.
-- `VectorRenderer` - renders shapes using the vector renderer.
-- `RasterRenderer` - renders shapes using the raster renderer.
-- `AsciiRenderer` - an additional renderer added for the extension.
-- `Main` - runs the examples and tests.
+The bridge field is `Shape.renderer`.
 
-The bridge itself is the Renderer reference inside Shape. The shape receives a renderer and uses it when execute() is called.
+`Shape.execute()` is the main abstraction operation, and `setImplementation(Renderer renderer)` changes the renderer.
 
-The renderer can also be changed while the program is running using setImplementation().
+The T5 runtime switching check is in `Main`.
 
 ## How the Bridge pattern is used
 
